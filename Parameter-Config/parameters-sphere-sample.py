@@ -29,26 +29,25 @@ class Parameters():
         
     """
     def __init__(self):
-	# Block example	
-	self.meshfile='Mesh/block_i.obj'
-        self.filename='Purkinje-Networks/block-test'
-        self.init_node=np.array([0.14,0.24,0.04])
-        self.second_node=np.array([-0.04,0.06,-0.06])        	
-	self.init_length=0.5
-	#Number of iterations (generations of branches)
-        self.N_it=20
-	#Median length of the branches
-        self.length=1.0
-	#Standard deviation of the length
+        self.meshfile='Mesh/sphere.obj'
+        self.filename='Purkinje-Networks/sphere-pk'
+        self.init_node=np.array([-1.0 ,0., 0.])
+        self.second_node=np.array([-0.964,  0.00,  0.266])
+        self.init_length=0.5
+#Number of iterations (generations of branches)
+        self.N_it=10
+#Median length of the branches
+        self.length=.3
+#Standard deviation of the length
         self.std_length = np.sqrt(0.2)*self.length
-	#Min length to avoid negative length
-        self.min_length = self.length/3.
+#Min length to avoid negative length
+        self.min_length = self.length/10.
         self.branch_angle=0.15
         self.w=0.1
-	#Length of the segments (approximately, because the lenght of the branch is random)
+#Length of the segments (approximately, because the lenght of the branch is random)
         self.l_segment=.01
+
         self.Fascicles=True
-	
 ###########################################
 # Fascicles data
 ###########################################
@@ -57,4 +56,3 @@ class Parameters():
 # Save data?
         self.save=True
         self.save_paraview=True
-

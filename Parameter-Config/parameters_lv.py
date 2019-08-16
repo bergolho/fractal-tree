@@ -29,26 +29,34 @@ class Parameters():
         
     """
     def __init__(self):
-	# Block example	
-	self.meshfile='Mesh/block_i.obj'
-        self.filename='Purkinje-Networks/block-test'
-        self.init_node=np.array([0.14,0.24,0.04])
-        self.second_node=np.array([-0.04,0.06,-0.06])        	
-	self.init_length=0.5
-	#Number of iterations (generations of branches)
-        self.N_it=20
-	#Median length of the branches
-        self.length=1.0
-	#Standard deviation of the length
-        self.std_length = np.sqrt(0.2)*self.length
-	#Min length to avoid negative length
-        self.min_length = self.length/3.
-        self.branch_angle=0.15
-        self.w=0.1
-	#Length of the segments (approximately, because the lenght of the branch is random)
-        self.l_segment=.01
-        self.Fascicles=True
-	
+        #self.meshfile='Mesh/ventricles.obj'				#self.meshfile='block_first_try.obj'
+	self.meshfile='Mesh/ventricles_crop.obj'
+	# left ventricle
+	self.filename='LV_Purkinje'				#self.filename='block_purkinje'
+        #self.init_node=np.array([53.3247, 74.5455, -13.0866])	#self.init_node=np.array([-1.0, 0.0, 0.0])
+	self.second_node=np.array([58.1195, 71.2602, -30.4854])	#self.second_node=np.array(-0.964, 0.0, 0.266)
+	self.init_node=np.array([49.5354,76.6557,2.6418])
+	#self.second_node=np.array([])
+
+	# right ventricle
+	#self.filename='RV_Purkinje'
+	#self.init_node=np.array([44.6761, 67.9155, -5.0558])
+	#self.second_node=np.array([48.7621, 62.6291, -15.961])	
+
+	self.init_length=10 					#self.init_length = 0.5   			# 7 looks OK, maybe even shorter
+#Number of iterations (generations of branches)
+        self.N_it=8 						#self.N_it = 10					# 
+#Median length of the branches
+        self.length=6		 				#self.length =.3				# 3 works, should be longer
+#Standard deviation of the length
+        self.std_length = np.sqrt(0.2)*self.length								# I did not play with this parameter at all
+#Min length to avoid negative length
+        self.min_length = self.length/2										# interesting parameter
+        self.branch_angle=0.07	 				#self.branch_angle=0.15				# probably should not be above 0.2
+        self.w=0.01						#self.w=0.1					# should not be increased above 0.1
+#Length of the segments (approximately, because the lenght of the branch is random)
+	self.l_segment=0.1 					#self.l_segment=0.01				# 0.1 is fine for our model
+        self.Fascicles=False 					#self.Fascicles=True				# no fascicles right now (for simiplicity)
 ###########################################
 # Fascicles data
 ###########################################
@@ -57,4 +65,3 @@ class Parameters():
 # Save data?
         self.save=True
         self.save_paraview=True
-

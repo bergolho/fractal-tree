@@ -29,26 +29,45 @@ class Parameters():
         
     """
     def __init__(self):
-	# Block example	
-	self.meshfile='Mesh/block_i.obj'
-        self.filename='Purkinje-Networks/block-test'
-        self.init_node=np.array([0.14,0.24,0.04])
-        self.second_node=np.array([-0.04,0.06,-0.06])        	
-	self.init_length=0.5
+        
+	self.meshfile='Mesh/Patient_Pat26.obj'
+	# Right Ventricle Patient 26
+	self.filename='RV_Purkinje'				
+        self.init_node=np.array([70.9453,75.6371,0.0])	
+	self.second_node=np.array([50.8642,78.6185,-29.6189])	
+	self.init_length=1.0					
 	#Number of iterations (generations of branches)
-        self.N_it=20
+        self.N_it=10						
 	#Median length of the branches
-        self.length=1.0
+        self.length=7.0		 				
 	#Standard deviation of the length
-        self.std_length = np.sqrt(0.2)*self.length
+        self.std_length = np.sqrt(0.2)*self.length							
 	#Min length to avoid negative length
-        self.min_length = self.length/3.
-        self.branch_angle=0.15
-        self.w=0.1
+        self.min_length = self.length/2										
+        self.branch_angle=0.3				
+        self.w=0.04						
 	#Length of the segments (approximately, because the lenght of the branch is random)
-        self.l_segment=.01
-        self.Fascicles=True
+	self.l_segment=0.5					
+        self.Fascicles=False 					
 	
+	# Left Ventricle Patient 3
+	#self.filename='LV_Purkinje'
+	#self.init_node=np.array([78.7884,88.3452,0.0])
+	#self.second_node=np.array([73.8701,97.6159,-52.8102])	
+
+	#self.init_length=10.0					
+	#Number of iterations (generations of branches)
+        #self.N_it=10						 
+	#Median length of the branches
+        #self.length=7.0		 				
+	#Standard deviation of the length
+        #self.std_length = np.sqrt(0.2)*self.length						
+        #self.min_length = self.length/2										
+        #self.branch_angle=0.3	 				
+        #self.w=0.02						
+	#Length of the segments (approximately, because the lenght of the branch is random)
+	#self.l_segment=0.5 					
+        #self.Fascicles=False 					
 ###########################################
 # Fascicles data
 ###########################################
@@ -57,4 +76,3 @@ class Parameters():
 # Save data?
         self.save=True
         self.save_paraview=True
-
