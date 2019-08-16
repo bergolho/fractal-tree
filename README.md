@@ -31,6 +31,8 @@ branches, nodes = Fractal_Tree_3D(param)
 
 If you have questions you can contact me at francisco.sahli  at  gmail.com
 
+------------
+
 ## Examples section:
 ##### Author: Lucas Berg
 
